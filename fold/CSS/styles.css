@@ -597,6 +597,9 @@ body.dark-theme {
 /*=============== PROJECTS ===============*/
 .projects__container {
 	overflow: initial;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .projects__content {
@@ -608,6 +611,8 @@ body.dark-theme {
 	width: 250px;
 	border-radius: 0.75rem;
 	margin-bottom: 1.25rem;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .projects__subtitle {

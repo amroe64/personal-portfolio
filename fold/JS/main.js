@@ -42,6 +42,12 @@ const scrollheader = () => {
 let swiperProjects = new Swiper('.projects__container', {
 	loop: true,
 	spaceBetween: 24,
+	breakpoints: {
+		1200: {
+			slidesPerView: 2,
+			spaceBetween: 30,
+		},
+	},
 
 	navigation: {
 		nextEl: '.swiper-button-next',
