@@ -47,23 +47,26 @@
 							</a>
 						</li>
 
-						<li class="nav__item">
+						<!-- <li class="nav__item">
 							<a href="#services" class="nav__link">
 								<i class="ri-briefcase-line"></i> Services
 							</a>
-						</li>
+						</li> -->
 
 						<li class="nav__item">
 							<a href="#projects" class="nav__link">
 								<i class="ri-image-line"></i> Projects
 							</a>
 						</li>
-
+<!-- 
 						<li class="nav__item">
 							<a href="#contact" class="nav__link">
 								<i class="ri-chat-3-line"></i> Contact
 							</a>
-						</li>
+						</li> -->
+
+
+
 					</ul>
 
 					<!-- Close button -->
@@ -73,6 +76,9 @@
 				</div>
 
 				<div class="nav__buttons">
+          <!-- Add the "Resume" button -->
+					<button class="btn" onclick="downloadResume()">Resume</button>
+					
 					<!-- Theme change button -->
 					<i class="ri-moon-line change-theme" id="theme-button"></i>
 
@@ -83,7 +89,16 @@
 				</div>
 			</nav>
 		</header>
-
+<script>
+	function downloadResume() {
+  const link = document.createElement('a');
+  link.href = 'file:///C:/Users/amrse/OneDrive%20-%20Virginia%20Tech/Desktop/Mis/Resume/AMR%20ELAMIN_RESUME_09_16_24.pdf" download="C:\Users\amrse\OneDrive - Virginia Tech\Documents\GitHub\personal-portfolio\fold\AMR ELAMIN_RESUME_09_16_24.pdf';
+  link.download = 'Amr_Elamin_Resume.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+</script>
 		<!--==================== MAIN ====================-->
 		<main class="main">
 			<!--==================== HOME ====================-->
@@ -92,10 +107,37 @@
 					<div class="home__data grid">
 						<h1 class="home__title">
 							Hi, I'm Amr Elamin <br />
-							Developer <br />
-							Based in Richmond <br />
+							<span id="role">Engineer</span>
 						</h1>
-
+						<style>
+							#role {
+									font-size: 28px; /* You can adjust this size */
+									font-weight: normal; /* Adjust the weight if needed */
+									transition: opacity 0.3s ease-in-out; /* Smooth transition */
+							}
+					</style>					
+						<script>
+							const roles = [
+									'Student',
+									'Engineer',
+									'Developer',
+									'Industrial Engineer',
+									'Systems Engineer',
+									'Operation Engineer',
+									'Data Analyst',
+									'Data Engineer',
+									'Web Developer'
+							];
+					
+							let roleIndex = 0;
+							const roleElement = document.getElementById('role');
+					
+							setInterval(() => {
+									roleElement.textContent = roles[roleIndex];
+									roleIndex = (roleIndex + 1) % roles.length; // Loop back to the first item
+							}, 1000); // Change every 500 milliseconds (0.5 seconds)
+					</script>
+					
 						<div class="home__blob grid">
 							<div class="home__profile">
 								<img src="fold/img/image2.0.png" alt="home profile" />
@@ -146,8 +188,7 @@
 							<h3 class="home__info-title">BIOGRAPHY</h3>
 
 							<p class="home__info-description">
-								Hi, I'm Amr, Fullstack Web Developer. Passionate about designing
-								beautiful web interface. Based in Richmond, VA.
+								Hi, I'm Amr, a student at Virginia Tech, pursuing a Bachelor in Industrial and Systems Engineering. My study of Human Factors Engineering has shaped my approach to design and problem-solving.
 							</p>
 						</div>
 
@@ -175,13 +216,13 @@
 					<!--==================== HOME INFO 2 ====================-->
 					<div class="home__info">
 						<div>
-							<h3 class="home__info-title">Years of Experience</h3>
+							<h3 class="home__info-title">YEARS OF EXPERIENCE</h3>
 
 							<p class="home__info-number">02+</p>
 						</div>
 
 						<div>
-							<h3 class="home__info-title">Completed Projects</h3>
+							<h3 class="home__info-title">COMPLETED PROJECTS</h3>
 
 							<p class="home__info-number">04+</p>
 						</div>
@@ -338,9 +379,9 @@
 
 							<div>
 								<h3 class="qualification__name">
-									FullStack Web Development Certification
+									IBM Full Stack Software Developer Professional Certificate
 								</h3>
-								<span class="qualification__country">udemy - Remote</span>
+								<span class="qualification__country">Coursera - Remote</span>
 								<span class="qualification__year">2024</span>
 							</div>
 
@@ -348,7 +389,7 @@
 								<h3 class="qualification__name">
 									SQL for Data Analytics Certification
 								</h3>
-								<span class="qualification__country">Coursera - Remote</span>
+								<span class="qualification__country">Udemy - Remote</span>
 								<span class="qualification__year">2024</span>
 							</div>
 						</div>
@@ -460,11 +501,9 @@
 						<div class="swiper-wrapper">
 							<!--==================== PROJECT 1 ====================-->
 							<div class="projects__content swiper-slide">
-								<img
-									src="fold/img/Project1.png"
-									alt="projects img"
-									class="projects__img"
-								/>
+								<div class="video">
+									<video src="" loop muted autoplay></video>
+								</div>
 
 								<div>
 									<span class="projects__subtitle">Web Development</span>
@@ -549,15 +588,15 @@
 			</section>
 
 			<!--==================== TESTIMONIAL ====================-->
-			<section class="testimonial section">
+			<!-- <section class="testimonial section">
 				<h2 class="section__title">Testimonials</h2>
 				<span class="section__subtitle">My clients are saying</span>
 
 				<div class="container section__border">
 					<div class="testimonial__container swiper">
-						<div class="swiper-wrapper">
+						<div class="swiper-wrapper"> -->
 							<!--==================== TESTIMONIAL 1 ====================-->
-							<div class="testimonial__content swiper-slide">
+							<!-- <div class="testimonial__content swiper-slide">
 								<p class="testimonial__description">
 									"Working with Amr was a game-changer for our small business.
 									His expertise in web development not only revamped our website
@@ -571,9 +610,9 @@
 									<h3 class="testimonial__name">Jordan Smith</h3>
 									<span class="testimonial__subtitle">Client</span>
 								</div>
-							</div>
+							</div> -->
 							<!--==================== TESTIMONIAL 2 ====================-->
-							<div class="testimonial__content swiper-slide">
+							<!-- <div class="testimonial__content swiper-slide">
 								<p class="testimonial__description">
 									"Amr's professionalism and skill in data analysis transformed
 									the way we approach our business decisions. His customized
@@ -586,9 +625,9 @@
 									<h3 class="testimonial__name">Alicia Fernandez</h3>
 									<span class="testimonial__subtitle">Client</span>
 								</div>
-							</div>
+							</div> -->
 							<!--==================== TESTIMONIAL 3 ====================-->
-							<div class="testimonial__content swiper-slide">
+							<!-- <div class="testimonial__content swiper-slide">
 								<p class="testimonial__description">
 									"From the initial consultation to the final delivery, working
 									with Amr was an absolute pleasure. His web development skills
@@ -603,10 +642,10 @@
 									<span class="testimonial__subtitle">Client</span>
 								</div>
 							</div>
-						</div>
+						</div> -->
 
 						<!-- Swiper arrows -->
-						<div class="swiper-button-next">
+						<!-- <div class="swiper-button-next">
 							<i class="ri-arrow-right-s-line"></i>
 						</div>
 
@@ -621,7 +660,7 @@
 					alt="testimonial image"
 					class="testimonial__img"
 				/>
-			</section>
+			</section> -->
 
 			<!--==================== CONTACT ====================-->
 			<section class="contact section" id="contact">

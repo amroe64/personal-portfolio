@@ -7,7 +7,7 @@
 
 	/*========== Colors ==========*/
 	/*Color mode HSL(hue, saturation, lightness)*/
-	--first-color: hsl(207, 65%, 65%);
+	--first-color: rgb(218, 92, 92);
 	--title-color: hsl(207, 4%, 16%);
 	--text-color: hsl(207, 4%, 28%);
 	--text-color-light: hsl(207, 4%, 56%);
@@ -1349,3 +1349,55 @@ body.dark-theme {
 		margin-top: 5rem;
 	}
 }
+
+.btn {
+	font-family: var(--title-font);
+	font-weight: var(--font-medium);
+
+}
+	.btn {
+		position: relative;
+		font-size: 12px;
+		text-transform: uppercase;
+		text-decoration: none;
+		padding: .750em 1.75em;
+		display: inline-block;
+		cursor: pointer;
+		border-radius: 6em;
+		transition: all 0.2s;
+		border: none;
+		font-weight: bolder;
+		color: black;
+	}
+	.btn:hover {
+		transform: translateY(-3px);
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+	}
+	
+	.btn:active {
+		transform: translateY(-1px);
+		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	}
+	
+	.btn::after {
+		content: "";
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		border-radius: 100px;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		transition: all 0.4s;
+	}
+	
+	.btn::after {
+		background-color: #fff;
+	}
+	
+	.btn:hover::after {
+		transform: scaleX(1.4) scaleY(1.6);
+		opacity: 0;
+	}
+	
