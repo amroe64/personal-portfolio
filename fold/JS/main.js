@@ -130,23 +130,24 @@ contactForm.addEventListener('submit', sendEmail);
 const sections = document.querySelectorAll('section[id]');
 
 const scrollActive = () => {
-	const scrollY = window.pageYOffset;
+  const scrollY = window.pageYOffset;
 
-	sections.forEach((current) => {
-		const sectionHeight = current.offsetHeight,
-			sectionTop = current.offsetTop - 58,
-			sectionId = current.getAttribute('id'),
-			sectionClass = document.querySelector(
-				'.nav__menu a[href*=' + sectionId + ']'
-			);
+  sections.forEach((current) => {
+    const sectionHeight = current.offsetHeight,
+      sectionTop = current.offsetTop - 58,
+      sectionId = current.getAttribute('id'),
+      sectionClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']');
 
-		if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-			sectionClass.classList.add('active-link');
-		} else {
-			sectionClass.classList.remove('active-link');
-		}
-	});
+    if (sectionClass) { // Check if sectionClass exists
+      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        sectionClass.classList.add('active-link');
+      } else {
+        sectionClass.classList.remove('active-link');
+      }
+    }
+  });
 };
+
 window.addEventListener('scroll', scrollActive);
 
 /*=============== SHOW SCROLL UP ===============*/
@@ -224,3 +225,27 @@ sr.reveal('.skills__content:nth-child(2), .contact__content:nth-child(2)', {
 	origin: 'right',
 });
 sr.reveal('.qualification__content, .services__card', { interval: 100 });
+
+function downloadResume() {
+  const link = document.createElement('a');
+  link.href = 'fold/AMR_ELAMIN_RESUME_09_16_24.pdf'; // Update the path based on where you store the resume
+  link.download = 'AMR_ELAMIN_RESUME_09_16_24.pdf';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
+var skillsSwiper = new Swiper('.skills__swiper', {
+  slidesPerView: 1, // Shows one slide at a time (one skill set per view)
+  spaceBetween: 30, // Adds 30px space between each slide
+  loop: true, // Enables infinite looping of slides (slides continue looping after the last slide)
+  navigation: {
+    nextEl: '.swiper-button-next', // Specifies the next button element for navigation
+    prevEl: '.swiper-button-prev', // Specifies the previous button element for navigation
+  },
+  pagination: {
+    el: '.swiper-pagination', // Specifies the pagination element (dots below the slider)
+    clickable: true, // Allows the user to click the pagination bullets to navigate
+  },
+});
+

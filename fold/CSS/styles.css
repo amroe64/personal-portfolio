@@ -296,6 +296,76 @@ body.dark-theme {
 	color: var(--title-color);
 }
 
+/* Apply the same styles as the button to the Resume button */
+.btn {
+  position: relative;
+  font-size: 15px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 1em 2.5em;
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 6em;
+  transition: all 0.2s;
+  border: none;
+  font-family: inherit;
+  font-weight: 500;
+  color: var(--container-color); /* Adjust text color for light mode */
+  background-color: var(--title-color); /* Use body color in light mode */
+  box-shadow: 0 4px 20px hsla(207, 24%, 8%, 0.4); /* Darker shadow in light mode */
+}
+
+/* Hover state */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px hsla(207, 24%, 8%, 0.4); /* Darker hover shadow for light mode */
+}
+
+/* Active state */
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px hsla(207, 24%, 8%, 0.4); /* Darker active shadow for light mode */
+}
+
+/* After pseudo-element for hover effect */
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+  background-color: #fff; /* Default pseudo-element background */
+}
+
+/* Hover effect on pseudo-element */
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+/* Dark theme for the Resume button */
+.dark-theme .btn {
+  background-color: var(--title-color); /* Use container color in dark mode */
+  color: var(--container-color); /* Adjust text color for dark mode */
+  box-shadow: 0 4px 20px hsla(207, 24%, 85%, 0.4); /* Lighter shadow for dark mode */
+}
+
+/* Hover state for dark theme */
+.dark-theme .btn:hover {
+  box-shadow: 0 10px 20px hsla(207, 24%, 85%, 0.4); /* Lighter hover shadow for dark mode */
+}
+
+/* Active state for dark theme */
+.dark-theme .btn:active {
+  box-shadow: 0 5px 10px hsla(207, 24%, 85%, 0.4); /* Lighter active shadow for dark mode */
+}
+
+
 /*=============== HOME ===============*/
 .home__container {
 	row-gap: 4rem;
@@ -485,6 +555,19 @@ body.dark-theme {
 	80% {
 		transform: translate(0);
 	}
+}
+
+.skills__swiper {
+  margin-top: 2rem;
+}
+
+.swiper-pagination-bullet {
+  background-color: var(--title-color);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--title-color);
 }
 
 /*=============== QUALIFICATION ===============*/
@@ -966,7 +1049,7 @@ body.dark-theme {
 	bottom: -30%;
 	background-color: var(--body-color);
 	box-shadow: 0 4px 12px hsl(207, 24%, 35%, 0.15);
-	display: inline-flex;
+	display: inline-flex; 
 	padding: 0.35rem;
 	border-radius: 0.25rem;
 	font-size: 1.1rem;
@@ -974,6 +1057,7 @@ body.dark-theme {
 	z-index: var(--z-tooltip);
 	transition: bottom 0.3s, transform 0.3s;
 }
+
 .scrollup:hover {
 	transform: translateY(-0.25rem);
 }
@@ -1138,7 +1222,7 @@ body.dark-theme {
 	}
 
 	.section {
-		padding-block: 8rem 0;
+		padding-block: 4rem 0;
 	}
 
 	.home__title {
@@ -1212,7 +1296,7 @@ body.dark-theme {
 		font-size: 1.5rem;
 	}
 	.home__info {
-		grid-template-rows: repeat(3, 130px);
+		/* grid-template-rows: repeat(3, 130px); */
 		row-gap: 4rem;
 		margin-top: 16rem;
 	}
@@ -1350,54 +1434,3 @@ body.dark-theme {
 	}
 }
 
-.btn {
-	font-family: var(--title-font);
-	font-weight: var(--font-medium);
-
-}
-	.btn {
-		position: relative;
-		font-size: 12px;
-		text-transform: uppercase;
-		text-decoration: none;
-		padding: .750em 1.75em;
-		display: inline-block;
-		cursor: pointer;
-		border-radius: 6em;
-		transition: all 0.2s;
-		border: none;
-		font-weight: bolder;
-		color: black;
-	}
-	.btn:hover {
-		transform: translateY(-3px);
-		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-	}
-	
-	.btn:active {
-		transform: translateY(-1px);
-		box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-	}
-	
-	.btn::after {
-		content: "";
-		display: inline-block;
-		height: 100%;
-		width: 100%;
-		border-radius: 100px;
-		position: absolute;
-		top: 0;
-		left: 0;
-		z-index: -1;
-		transition: all 0.4s;
-	}
-	
-	.btn::after {
-		background-color: #fff;
-	}
-	
-	.btn:hover::after {
-		transform: scaleX(1.4) scaleY(1.6);
-		opacity: 0;
-	}
-	
